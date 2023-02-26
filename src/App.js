@@ -53,7 +53,8 @@ function App() {
                   <div className="yui-u first">
                     <h2>Skills</h2>
                   </div>
-                  <div className="yui-u">
+                  <div className="yui-u skills-list">
+                    <div className='skill-add'>+</div>
                     {skills.map((items, i) => {
                       return (
                         <div className="talent" key={i}>

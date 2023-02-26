@@ -64,4 +64,25 @@ a#pdf:hover { background: #222; }
 .yui-gf .yui-u{width:80.2%;}
 .yui-gf div.first{width:12.3%;}
 
+.skills-list:hover .skill-add{
+  display: block;
+}
+.skill-add{
+  display: none;
+}
+.skills-list{
+  position: relative;
+}
+.skill-add{
+  background: #0000ff36;
+  font-size: 25px;
+  width: 30px;
+  text-align: center;
+  height: 31px;
+  border-radius: 4px;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  color: #0000ff;
+}
 
