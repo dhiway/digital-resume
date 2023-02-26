@@ -16,9 +16,9 @@ It builds different section of the resume with available VCs based on their type
 
 ## Development steps
 
-After clonig run below steps to get the UI loaded up
+After cloning run below steps to get the UI loaded up
 
 ```
-npm install
+npm install // sudo npm install
 npm run start
 ```
