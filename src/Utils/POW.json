@@ -1,0 +1,134 @@
+{
+    "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://cord.network/contexts/credentials"
+    ],
+    "id": "cred:cord:67kDZrnPDaFjnADjwyRFEWV7emzaADE7r41suX6yMRKpPSe2",
+    "type": [
+    "VerifiableCredential",
+    "CordCredential2020"
+    ],
+    "issuer": "id:cord:3xVm44G7oD76yBz67taxAvpCFGpf8vNNPix92RY5MztCMhVR",
+    "issuanceDate": "2023-02-26T13:55:51.693Z",
+    "expirationDate": "2122-02-26T13:55:51.693Z",
+    "credentialSubject": {
+    "@id": "id:cord:3v2dEYR4A1vN7verfajXVsDbu7PoQjaVtVPkXvQwChSMLqKj",
+    "@context": {
+    "@vocab": "schema:cord:5B9yMoaWKZXZPjTjZuks6DRWyRauiMUkXT5bunEAeP1fu56R#"
+    },
+    "company": "Dhiway Networks Pvt Ltd",
+    "email": "prashant@dhiway.com",
+    "end_date": "Tue, 28 Feb 2023 00:00:00 GMT",
+    "issue_date": "Tue, 28 Feb 2023 00:00:00 GMT",
+    "name": "Prashant",
+    "project": "CORD",
+    "remarks": "Good",
+    "role": "Senior Software Engineer",
+    "start_date": "Wed, 26 Feb 2020 00:00:00 GMT",
+    "team": "UI",
+    "title": "Senior Software Engineer"
+    },
+    "credentialHash": "hash:cord:0x469af5082b4a453cbe0deb8fef795bb172befe2362301712c2aa4f374b0be23e",
+    "evidence": [],
+    "nonTransferable": true,
+    "proof": [
+    {
+    "type": "CordStreamSignature2020",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": {
+    "type": "Sr25519VerificationKey2020",
+    "publicKeyHex": "0xa22b161c21fd56445f485ea0dd31db865c55298ce1eb2427e7b033d43b081a68"
+    },
+    "signature": "0x01aacc19a2fa4e8a7de70edd83416b02612899b4958c3dd4f6fba2c66bb8819546f1f7240aebc843d2644de3833786bab9e82fb745d786b69ccc53c8dc88d4d780"
+    },
+    {
+    "type": "CordCredential2020",
+    "proofPurpose": "assertionMethod",
+    "issuerAddress": "3xVm44G7oD76yBz67taxAvpCFGpf8vNNPix92RY5MztCMhVR"
+    },
+    {
+    "type": "CordCredentialDigest2020",
+    "proofPurpose": "assertionMethod",
+    "nonces": {
+    "0x85a16847a389334f835fa10424fd1bfe04fc81b96266f25847dd584570ebdd97": "bc4a9132-8280-4a4e-be64-2935201ad91d",
+    "0xa5ea3c233a33e16db7b00c336a15005b895b12a39bc8719430b0622a47e7b1e7": "879a30ce-5592-4a39-8b96-446410f5e30a",
+    "0x0cab8a7660303dba7c3b7fab2f412d48c35052045487d99da4510a1a9efad573": "8117acde-9d94-4ee2-bde4-9ea11624d28d",
+    "0x64aa8700f799184648726bc5cd43482c2be4036efe6dfb1778f43ad16251b8e9": "e24c7dfd-6123-4814-9bd4-a70e3e0e84b1",
+    "0x9350577f0bad50ba2d1c8d8494ba782cf0585e9777d1fa0ffba9e4b91ccec04d": "e73684cd-5035-4380-b717-7e1aebcb7fab",
+    "0x69522befa0d47fdb1a6132df3537515446cd82a777e1527c659b20778a0caea3": "b1221613-146c-4b69-a697-084fff188e42",
+    "0x382c9279e61aa261a61dceff169a0bfe88914426496bfe4ecf22683786244a9d": "4b5f048a-222e-427a-a1fd-514c8bd40f3f",
+    "0x49e845c39d1428d0eca4063f10918b4b5664d0e9d824a40cff142379c2cd1f6a": "030bedfc-bc9e-4f64-9875-1c203c225878",
+    "0x9e2ff4f2ba570ddd8c2fead6d397fc693466e6e9b5350b6d2af330ee851783c7": "c6f764f4-7ccf-4971-8074-76c204ac3c7d",
+    "0x8984f279d202a14cc72b9b11cb84c7d687cae5048b182f2090979cec27f59d27": "fc710210-cb19-4761-bb80-5b14dd513cba",
+    "0x3986d4240ed29ec04abf63ce646deb4bd7d5f8dfb7b9a7261839bd387c832d55": "e1bcde6d-40dd-47b9-8849-94384134749a",
+    "0xc507819d74f62e319b722834165ac601ae1901e0563280cb0ad0271181868b65": "47cf0ac0-fc1d-46af-a5da-9eb566423572"
+    },
+    "contentHashes": [
+    "0x09711d162450eb0aac714d0bbf736de6f5142ebd631d226451d62f5b3fe52b45",
+    "0x15748e71f40d08b4b113e3d3af2f26f110198262e6c92ab22efb07f64730e5b7",
+    "0x242cd8ed7d5b5f2687f3444b8f73b6cfa58d7a8f81215f03f8d6899b736ef138",
+    "0x26b9556fc921605087759d2d7b3a3247bf8bd6cd665526189919a8fe7d8b02bd",
+    "0x3a7124101759347cedd43f684fa7c81ccf99591c2e87112a558f6c032e166dbb",
+    "0x44f4ead7014b79eb2fedcf2423d6727730dbe584efc0d6ca295d808fb55ab6ee",
+    "0x51d3cee0cd2fff98e5235bf96735f2efb143598f7728f234b3d0ab0260908e18",
+    "0x827ae2735ae27269f5e5fc80ac1183907ba8a508bb256807be02f6453de926e1",
+    "0x91e0f55082fa2452bdfe524a76a69ea9667443f7dbeb99d1be51e8e02ff61e5d",
+    "0x92d3a8919424a1f3bcf9424ccd40271f8cbd066769a549c7b32023a57549e0f1",
+    "0xaf58b7e0ad96791914fd54ca46892c8dc9e48f563078decbf6feaac8155cb34c",
+    "0xe947cc6de0446e4fe24bebd81bb0149d6e1481d54774618055182f2935275371"
+    ]
+    }
+    ],
+    "credentialSchema": {
+    "@id": "schema:cord:5B9yMoaWKZXZPjTjZuks6DRWyRauiMUkXT5bunEAeP1fu56R",
+    "@type": "JsonSchemaValidator2018",
+    "name": "ProofOfWork-oc31123b8-49b2-4a04-bcd8-a825044fd885",
+    "schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "ProofOfWork-oc31123b8-49b2-4a04-bcd8-a825044fd885",
+    "description": "Used providing Proof of work",
+    "required": [],
+    "properties": {
+    "name": {
+    "type": "string"
+    },
+    "email": {
+    "type": "string"
+    },
+    "company": {
+    "type": "string"
+    },
+    "team": {
+    "type": "string"
+    },
+    "project": {
+    "type": "string"
+    },
+    "title": {
+    "type": "string"
+    },
+    "role": {
+    "type": "string"
+    },
+    "remarks": {
+    "type": "string"
+    },
+    "start_date": {
+    "type": "string"
+    },
+    "end_date": {
+    "type": "string"
+    },
+    "issue_date": {
+    "type": "string"
+    }
+    },
+    "$metadata": {
+    "version": "0.0.13"
+    },
+    "type": "object",
+    "$id": "schema:cord:5B9yMoaWKZXZPjTjZuks6DRWyRauiMUkXT5bunEAeP1fu56R"
+    },
+    "author": "id:cord:3xVm44G7oD76yBz67taxAvpCFGpf8vNNPix92RY5MztCMhVR"
+    }
+    }
