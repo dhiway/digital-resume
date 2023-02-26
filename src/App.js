@@ -1,24 +1,25 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import POE from './Utils/POE.json'
-import POS from './Utils/POS.json'
-import POW from './Utils/POW.json'
-import {getYear} from './Utils/Utils'
+import { useEffect, useState } from "react";
+import "./App.css";
+import POE from "./Utils/POE.json";
+import POS from "./Utils/POS.json";
+import POW from "./Utils/POW.json";
+import { getYear } from "./Utils/Utils";
+import EditSkillModal from "./components/modals/EditSkillModal";
 function App() {
-  const [skills, setskills] = useState([])
-  useEffect(() => {
-    skillsList()
-  }, [])
+  const [skills, setSkills] = useState([POS]);
+  const [modalView, setModalView] = useState(false);
 
-  const skillsList = () => {
-    const splitSkills = POS.credentialSubject.skill.split(',')
-    setskills(splitSkills)
-  }
   return (
     <div className="App">
+      {modalView && (
+        <EditSkillModal
+          credentialArr={skills}
+          setCredentialArr={setSkills}
+          setVisiblity={setModalView}
+        />
+      )}
       <div id="doc2" className="yui-t7">
         <div id="inner">
-
           <div id="hd">
             <div className="yui-gc">
               <div className="yui-u first">
@@ -29,7 +30,11 @@ function App() {
               <div className="yui-u">
                 <div className="contact-info">
                   {/* <h3><a id="pdf" href="#">Download PDF</a></h3> */}
-                  <h3><a href="mailto:name@yourdomain.com">{POE?.credentialSubject?.email}</a></h3>
+                  <h3>
+                    <a href="mailto:name@yourdomain.com">
+                      {POE?.credentialSubject?.email}
+                    </a>
+                  </h3>
                   <h3>(9738452245)</h3>
                 </div>
               </div>
@@ -45,7 +50,8 @@ function App() {
                   </div>
                   <div className="yui-u">
                     <p className="enlarge">
-                      Progressively evolve cross-platform ideas before impactful infomediaries.
+                      Progressively evolve cross-platform ideas before impactful
+                      infomediaries.
                     </p>
                   </div>
                 </div>
@@ -54,13 +60,18 @@ function App() {
                     <h2>Skills</h2>
                   </div>
                   <div className="yui-u skills-list">
-                    <div className='skill-add'>+</div>
+                    <div
+                      className="skill-add"
+                      onClick={() => setModalView(true)}
+                    >
+                      Edit
+                    </div>
                     {skills.map((items, i) => {
                       return (
                         <div className="talent" key={i}>
-                          <h2>{items}</h2>
+                          <h2>{items.credentialSubject?.skill}</h2>
                         </div>
-                      )
+                      );
                     })}
                   </div>
                 </div>
@@ -80,7 +91,10 @@ function App() {
                     <div className="job">
                       <h2>{POW?.credentialSubject?.company}</h2>
                       <h3>{POW?.credentialSubject?.role}</h3>
-                      <h4>{getYear(POW?.credentialSubject?.start_date)} - {getYear(POW?.credentialSubject?.end_date)}</h4>
+                      <h4>
+                        {getYear(POW?.credentialSubject?.start_date)} -{" "}
+                        {getYear(POW?.credentialSubject?.end_date)}
+                      </h4>
                     </div>
                   </div>
                 </div>
@@ -89,12 +103,15 @@ function App() {
           </div>
 
           <div id="ft">
-            <p>{POE?.credentialSubject?.name} &mdash; <a href="mailto:prashant@dhiway.com">{POW?.credentialSubject?.email}</a> &mdash; 9738452245</p>
+            <p>
+              {POE?.credentialSubject?.name} &mdash;{" "}
+              <a href="mailto:prashant@dhiway.com">
+                {POW?.credentialSubject?.email}
+              </a>{" "}
+              &mdash; 9738452245
+            </p>
           </div>
-
         </div>
-
-
       </div>
     </div>
   );
