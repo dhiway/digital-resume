@@ -1,9 +1,22 @@
-# Digital Resume
+# Team Innovators
 
-This project is to build a Digital Resume, which is verifiable.
+This is a team of different companies coming together to build a solution.
 
-It builds different section of the resume with available VCs based on their type.
+## Required details
 
+| Team Name | Team members | Challenge Number | Product version | Product document | Product demo | User guide | Source code | Developer guide |
+|--|--|--|--|--|--|--|--|--|
+| Innovator | Giriraj Daga (Affinidi), Prashant M (Dhiway), Vikas J (BetterPlace), Denzil Lewis (Hacker Earth), Neeraj Sharma (SunStone) | 3 | 0.0.1 | [Product document](#product-document) | [Product demo](https://drive.google.com/file/d/1AM4nn7hBxRq-B9_B7QoWYirDS2g6zZb3/view?usp=sharing) | [User guide](#user-guide) | [Source code](#source-code) | [Developer guide](#developer-guide) |
+
+
+Other than above, considering this was an effort which needed multiple companies, and teams engaged, we had to include many more members in it.
+
+* Sankarshan (Dhiway)
+* Chaitanya S (Affinidi)
+* Hitesth Songra (Affindi)
+* Ujjwal S (Dhiway)
+* Sujith B (Dhiway)
+* Amar T (Dhiway)
 
 ### Product Document
 
@@ -57,13 +70,13 @@ We are integrating with 'Affinidi Wallet' login (check the API's [Postman collec
 
 1a. Clone the digital-resume repo
 
-`git clone https://github.com/dhiway/digital-resume`
+git clone https://github.com/dhiway/digital-resume
 
 1b. Create an API Key using https://apikey.affinidi.com/ and update the environment variable 
 
-2. `npm install && npm audit fix`
+2. npm install
 
-3. `npm run start`
+3. npm run start
 
 4. Open one of the browser tabs and type http://localhost:3000
 
@@ -108,6 +121,5 @@ Status: Demo works with lot of 'place-holder' code, and focus on showcasing the 
   - Must have.
 * More UI changes to resume submission flow
   - Can have more changes in UI based on feedback.
-
 
 
