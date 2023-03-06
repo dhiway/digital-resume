@@ -48,6 +48,7 @@ const Home = () => {
         Search for your DreamJob here
       </h6>
       {/* search bar */}
+      <div className="relative w-full">
       <input
         className="w-2/4 mt-12 h-[4ch] text-lg px-3 py-2 rounded bg-design-grey text-design-blue placeholder-design-blue outline-design-blue"
         type="text"
@@ -55,7 +56,9 @@ const Home = () => {
         value={searchInput}
         onKeyDown={handleSearch}
         onChange={(e) => setSearchInput(e.target.value)}
-      />
+        />
+        <button></button>
+        </div>
 
       {/* results */}
 

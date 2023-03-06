@@ -8,7 +8,7 @@ const SubmitStatus = (props) => {
             <h6 className='text-2xl text-design-purple'>Congratulations! {props.name}</h6>
             <p className='text-base p-0'>Your Resume has been succesfully uploaded.</p>
             <button onClick={props.close}
-        className="mr-10 px-4 py-2 border rounded text-design-blue border-design-blue text-base bg-design-grey
+        className=" px-4 py-2 border rounded text-design-blue border-design-blue text-base bg-design-grey
         hover:bg-design-purple hover:border-design-purple hover:text-white"
         >Resume</button>
         </div>
