@@ -17,14 +17,15 @@ const Home = () => {
   ];
   const [searchInput, setSearchInput] = useState("");
   const [results, setResults] = useState(fakeResults);
+  const [viewType, setViewType] = useState("list");
   const Navigate = useNavigate();
 
   const handleSearch = (e) => {
     let resultArr = [];
     if (e.code === "Enter") {
       console.log("Fix me: add a search api call");
-      if(searchInput === ''){
-        return setResults(fakeResults)
+      if (searchInput === "") {
+        return setResults(fakeResults);
       }
       fakeResults.forEach((result) => {
         if (
@@ -48,17 +49,24 @@ const Home = () => {
         Search for your DreamJob here
       </h6>
       {/* search bar */}
-      <div className="relative w-full">
-      <input
-        className="w-2/4 mt-12 h-[4ch] text-lg px-3 py-2 rounded bg-design-grey text-design-blue placeholder-design-blue outline-design-blue"
-        type="text"
-        placeholder="Search..."
-        value={searchInput}
-        onKeyDown={handleSearch}
-        onChange={(e) => setSearchInput(e.target.value)}
+      <div className="relative w-3/4">
+        <input
+          className="w-2/4 mt-12 h-[4ch] text-lg px-3 py-2 rounded bg-design-grey text-design-blue placeholder-design-blue outline-design-blue"
+          type="text"
+          placeholder="Search..."
+          value={searchInput}
+          onKeyDown={handleSearch}
+          onChange={(e) => setSearchInput(e.target.value)}
         />
-        <button></button>
-        </div>
+        <button
+          onClick={() => setViewType((o) => (o === "list" ? "grid" : "list"))}
+          className="absolute right-0 bottom-2 text-base text-purple-600 capitalize"
+        >
+          {" "}
+          <span className="text-design-grey font-light">View: </span>
+          {viewType}
+        </button>
+      </div>
 
       {/* results */}
 
@@ -73,9 +81,21 @@ const Home = () => {
           </p>
         </div>
       ) : (
-        <div className="mt-4 w-3/4 grid grid-cols-1">
+        <div
+          className={`mt-4 w-3/4 grid ${
+            viewType === "list" ? "grid-cols-1" : "grid-cols-3 gap-4"
+          }`}
+        >
           {results.map((item, i) => {
-            return <JobCards key={i} keyId={i} name={item.name} skills={item.skills} />;
+            return (
+              <JobCards
+                view={viewType}
+                key={i}
+                keyId={i}
+                name={item.name}
+                skills={item.skills}
+              />
+            );
           })}
         </div>
       )}
