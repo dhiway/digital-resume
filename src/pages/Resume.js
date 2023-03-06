@@ -25,7 +25,7 @@ function Resume() {
           setVisiblity={setModalView}
         />
       )}
-      <div id="doc2" className="yui-t7">
+      <div id="doc2" className="yui-t7 pb-16">
       <button onClick={()=>Navigate('/')} 
         className="px-4 py-2 mt-10 border rounded text-design-blue border-design-blue text-base bg-design-grey
         hover:bg-design-purple hover:border-design-purple hover:text-white"

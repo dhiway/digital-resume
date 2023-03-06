@@ -71,8 +71,8 @@ const Home = () => {
         </div>
       ) : (
         <div className="mt-4 w-3/4 grid grid-cols-1">
-          {results.map((item) => {
-            return <JobCards name={item.name} skills={item.skills} />;
+          {results.map((item, i) => {
+            return <JobCards key={i} keyId={i} name={item.name} skills={item.skills} />;
           })}
         </div>
       )}
