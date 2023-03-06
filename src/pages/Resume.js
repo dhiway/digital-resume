@@ -6,13 +6,18 @@ import POW from "../Utils/POW.json";
 import { getYear } from "../Utils/Utils";
 import EditSkillModal from "../components/modals/EditSkillModal";
 import { useNavigate } from "react-router-dom";
+import SubmitStatus from "../components/modals/SubmitStatus";
 function Resume() {
   const Navigate = useNavigate()
   const [skills, setSkills] = useState([POS]);
   const [modalView, setModalView] = useState(false);
+  const [successModal, setSuccessModal] = useState(false);
 
   return (
     <div className="App">
+      {successModal && (
+        <SubmitStatus name={POE?.credentialSubject?.name} close={()=> setSuccessModal(false)}/>
+      )}
       {modalView && (
         <EditSkillModal
           credentialArr={skills}
@@ -67,7 +72,7 @@ function Resume() {
                   </div>
                   <div className="yui-u skills-list">
                     <div
-                      className="absolute right-0 px-2 py-1 border rounded text-design-grey border-design-blue text-base bg-design-blue
+                      className="absolute -right-8 px-2 py-1 border rounded text-design-grey border-design-blue text-base bg-design-blue
                       hover:bg-design-purple hover:border-design-purple hover:text-white"
                       onClick={() => setModalView(true)}
                     >
@@ -121,8 +126,8 @@ function Resume() {
         </div>
       </div>
       {/* footer */}
-    <div className=" flex justify-end items-center w-screen h-16 absolute bottom-0 bg-design-grey text-design-blue ">
-        <button onClick={()=>Navigate('/resume')} 
+    <div className=" flex justify-end items-center w-screen h-16 fixed bottom-0 bg-design-grey text-design-blue ">
+        <button onClick={()=> setTimeout(()=>setSuccessModal(true), 500)} 
         className="mr-10 px-4 py-2 border rounded text-design-grey border-design-blue text-base bg-design-blue
         hover:bg-design-purple hover:border-design-purple hover:text-white"
         >Submit</button>

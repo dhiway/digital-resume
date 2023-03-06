@@ -8,6 +8,7 @@ module.exports = {
         "design-purple": "#9D8DF1",
         "design-blue": "#B8CDF8",
         "design-green": "#95F2D9",
+        "modal-black": "#00000070",
       },
     },
   },

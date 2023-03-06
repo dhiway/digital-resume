@@ -1,27 +1,45 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import JobCards from '../components/JobCards';
+import JobCards from "../components/JobCards";
 
 const Home = () => {
+  const fakeResults = [
+    {
+      name: "Dhiway Networks Pvt Ltd",
+      skills: "Javascript, Typescript, React, Rust",
+    },
+    { name: "Affinidi", skills: "Javascript, Typescript, React, Rust" },
+    {
+      name: "EkStep Foundation",
+      skills: "CopyWritting, WordPress, JavaScript, Web Design",
+    },
+    { name: "ONDC", skills: "Javascript, Typescript, React, Rust, databases" },
+  ];
   const [searchInput, setSearchInput] = useState("");
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState(fakeResults);
   const Navigate = useNavigate();
 
   const handleSearch = (e) => {
-    const fakeResults = [
-        { name: 'Dhiway Networks Pvt Ltd', skills: 'Javascript, Typescript, React, Rust'},
-        { name: 'Affinidi', skills: 'Javascript, Typescript, React, Rust'},
-        { name: 'Dhiway Networks Pvt Ltd', skills: 'Javascript, Typescript, React, Rust'},
-        { name: 'Affinidi', skills: 'Javascript, Typescript, React, Rust'},
-
-    ]
+    let resultArr = [];
     if (e.code === "Enter") {
       console.log("Fix me: add a search api call");
-      if(searchInput!=='' && fakeResults[0].skills.toLowerCase().slice(',').includes(searchInput.toLowerCase())){
-          setResults(fakeResults)
-      }else{
-           setResults([{failedLoad: true }]);
+      if(searchInput === ''){
+        return setResults(fakeResults)
       }
+      fakeResults.forEach((result) => {
+        if (
+          searchInput !== "" &&
+          result.skills
+            .toLowerCase()
+            .slice(",")
+            .includes(searchInput.toLowerCase())
+        ) {
+          resultArr.push(result);
+        }
+      });
+      resultArr.length > 0
+        ? setResults(resultArr)
+        : setResults([{ failedLoad: true }]);
     }
   };
   return (
@@ -41,7 +59,7 @@ const Home = () => {
 
       {/* results */}
 
-      {results.length>0 && results[0].failedLoad ? (
+      {results.length > 0 && results[0].failedLoad ? (
         <div className="h-3/4 flex justify-center items-center">
           <p className=" text-gray-400 text-lg ">No results found</p>
         </div>
@@ -52,17 +70,15 @@ const Home = () => {
           </p>
         </div>
       ) : (
-        <div className="mt-4 w-3/4 grid grid-cols-3 gap-4">
-            {
-                results.map((item)=>{
-                   return <JobCards name={item.name} skills={item.skills}/>
-                })
-            }
+        <div className="mt-4 w-3/4 grid grid-cols-1">
+          {results.map((item) => {
+            return <JobCards name={item.name} skills={item.skills} />;
+          })}
         </div>
       )}
 
       {/* footer */}
-      <div className="flex justify-end items-center w-screen h-16 absolute bottom-0 bg-design-grey text-design-blue ">
+      <div className="flex justify-end items-center w-screen h-16 fixed bottom-0 bg-design-grey text-design-blue ">
         <button
           onClick={() => Navigate("/resume")}
           className="mr-10 px-4 py-2 border rounded text-design-grey border-design-blue text-base bg-design-blue
